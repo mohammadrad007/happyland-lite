@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جزئیات سفارش | Happy Land Lite</title>
+    <script>
+      (function () {
+        const saved = localStorage.getItem("hl_theme");
+        const systemDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = saved || (systemDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+
+    <main class="max-w-4xl mx-auto px-5 py-10" id="orderPage">
+      <a
+        href="dashboard.html"
+        class="inline-flex items-center gap-1 text-sm text-muted mb-4 hover:text-brand"
+      >
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+        بازگشت به داشبورد
+      </a>
+
+      <div id="orderContent">
+        <p class="text-muted text-center py-10">در حال بارگذاری...</p>
+      </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script type="module">
+      import "./js/main.js";
+      import "./js/order.js";
+      import { renderFooter } from "./js/footer.js";
+      renderFooter();
+    </script>
+  </body>
+</html>

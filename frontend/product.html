@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جزئیات محصول | Happy Land Lite</title>
+    <script>
+      (function () {
+        const saved = localStorage.getItem("hl_theme");
+        const systemDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = saved || (systemDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+    <div class="max-w-6xl mx-auto px-5">
+      <nav id="breadcrumb" aria-label="مسیر صفحه"></nav>
+    </div>
+    <main class="max-w-6xl mx-auto px-5" id="productDetail"></main>
+
+    <!-- ⬇️ بخش اخیراً دیدید -->
+    <section
+      class="recently-section"
+      id="recentlySection"
+      style="display: none"
+    >
+      <div class="max-w-6xl mx-auto px-5">
+        <h2 class="recently-title">اخیراً دیدید</h2>
+        <div class="recently-slider" data-recently-grid></div>
+      </div>
+    </section>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+      <h3 class="font-bold text-lg mb-4">سبد خرید</h3>
+      <div id="cartItems" class="flex-1 overflow-y-auto"></div>
+      <div id="cartTotal" class="py-4 font-bold border-t border-base">
+        جمع: 0 تومان
+      </div>
+      <a href="checkout.html" class="btn-brand w-full">ادامه خرید</a>
+    </aside>
+
+    <footer class="site-footer"></footer>
+
+    <script type="module">
+      import "./js/main.js";
+      import "./js/product.js";
+      import { renderFooter } from "./js/footer.js";
+      renderFooter();
+    </script>
+  </body>
+</html>

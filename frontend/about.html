@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>درباره ما | Happy Land Lite</title>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("hl_theme");
+          const systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const theme = saved || (systemDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+
+    <div class="max-w-4xl mx-auto px-5">
+      <nav id="breadcrumb" aria-label="مسیر صفحه"></nav>
+    </div>
+
+    <main class="max-w-4xl mx-auto px-5 py-6">
+      <!-- ⬇️ هیرو -->
+      <section class="about-hero">
+        <div class="about-hero-icon">🎈</div>
+        <h1 class="about-hero-title">درباره Happy Land Lite</h1>
+        <p class="about-hero-subtitle">
+          یک فروشگاه اینترنتی مینیمال پوشاک — ساخته‌شده با HTML، CSS و
+          JavaScript خالص و بک‌اند Node.js/Express. پروژه‌ی دانشگاهی با تمرکز بر
+          تجربه‌ی کاربری، معماری ماژولار و کد تمیز.
+        </p>
+        <div class="about-hero-tags">
+          <span class="about-tag">🎓 پروژه دانشگاهی</span>
+          <span class="about-tag">⚡ Vanilla JS</span>
+          <span class="about-tag">🎨 Tailwind + CSS</span>
+          <span class="about-tag">🔧 Node.js + Express</span>
+          <span class="about-tag">🌗 دارک/لایت</span>
+          <span class="about-tag">🔐 پرداخت شبیه‌سازی</span>
+        </div>
+      </section>
+
+      <!-- ⬇️ هدف پروژه -->
+      <section class="about-section">
+        <h2 class="about-heading">🎯 هدف پروژه</h2>
+        <p class="about-text">
+          هدف این پروژه، پیاده‌سازی یک فروشگاه اینترنتی کامل با تمرکز بر
+          <strong
+            >مینیمالیسم، خوانایی کد، تجربه‌ی کاربری روان و معماری
+            ماژولار</strong
+          >
+          بود. تمام مراحل یک خرید واقعی — از جستجوی محصول، انتخاب سایز، استفاده
+          از کد تخفیف، تا پرداخت و پیگیری سفارش — شبیه‌سازی شده تا ساختار
+          استاندارد یک فروشگاه e-commerce به‌طور کامل نمایش داده شود.
+        </p>
+      </section>
+
+      <!-- ⬇️ ویژگی‌های اصلی -->
+      <section class="about-section">
+        <h2 class="about-heading">✨ ویژگی‌های اصلی</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3 class="feature-title">جستجوی زنده</h3>
+            <p class="feature-text">
+              جستجو در نام، توضیحات و دسته‌بندی با debounce و مرتب‌سازی هوشمند
+              نتایج.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🎛</div>
+            <h3 class="feature-title">فیلتر و مرتب‌سازی</h3>
+            <p class="feature-text">
+              فیلتر دسته، بازه‌ی قیمت، فقط تخفیف‌دار و مرتب‌سازی
+              (ارزان/گران/بیشترین تخفیف).
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📄</div>
+            <h3 class="feature-title">Infinite Scroll</h3>
+            <p class="feature-text">
+              بارگذاری خودکار محصولات با اسکرول، با استفاده از
+              IntersectionObserver.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📏</div>
+            <h3 class="feature-title">انتخاب سایز و تعداد</h3>
+            <p class="feature-text">
+              انتخاب سایز (S/M/L یا سنی) و تعداد قبل از افزودن به سبد، با cartId
+              یکتا.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🛒</div>
+            <h3 class="feature-title">سبد خرید هوشمند</h3>
+            <p class="feature-text">
+              افزودن/حذف، تغییر تعداد با دکمه‌های +/–، پشتیبانی از چند سایز،
+              ذخیره در localStorage.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🎟</div>
+            <h3 class="feature-title">کد تخفیف</h3>
+            <p class="feature-text">
+              اعتبارسنجی سمت بک‌اند، دو نوع تخفیف (درصدی/ثابت) با حداقل خرید و
+              سقف.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">❤</div>
+            <h3 class="feature-title">علاقه‌مندی‌ها</h3>
+            <p class="feature-text">
+              ذخیره‌ی محصولات موردعلاقه برای هر کاربر با اتصال به دیتابیس.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">👤</div>
+            <h3 class="feature-title">احراز هویت + آواتار</h3>
+            <p class="feature-text">
+              ثبت‌نام با نشانگر قدرت رمز، ورود، آواتار تعاملی با منوی کشویی.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💳</div>
+            <h3 class="feature-title">پرداخت هوشمند</h3>
+            <p class="feature-text">
+              درگاه شبیه‌سازی با تنظیمات از <code>.env</code> (always-success /
+              random / manual).
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📦</div>
+            <h3 class="feature-title">پیگیری سفارش</h3>
+            <p class="feature-text">
+              داشبورد، صفحه‌ی جزئیات با فاکتور و صفحه‌ی موفقیت پرداخت با انیمیشن
+              تیک.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">👀</div>
+            <h3 class="feature-title">تاریخچه مشاهده</h3>
+            <p class="feature-text">
+              نمایش «اخیراً دیدید» با ذخیره‌سازی محلی و اسلایدر افقی.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🌗</div>
+            <h3 class="feature-title">تم دارک و لایت</h3>
+            <p class="feature-text">
+              انتخاب کاربر با ذخیره‌سازی و احترام به prefers-color-scheme سیستم.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3 class="feature-title">ریسپانسیو کامل</h3>
+            <p class="feature-text">
+              طراحی سازگار با موبایل، تبلت و دسکتاپ با Grid و Media Queries.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🗺</div>
+            <h3 class="feature-title">نقشه تعاملی</h3>
+            <p class="feature-text">
+              نقشه‌ی Leaflet در صفحه‌ی تماس با مارکر و پاپ‌آپ موقعیت فروشگاه.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🎤</div>
+            <h3 class="feature-title">Breadcrumb</h3>
+            <p class="feature-text">
+              نمایش مسیر صفحه با آیکون و لینک بازگشت، در همه‌ی صفحات.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⬇️ تجربه کاربری -->
+      <section class="about-section">
+        <h2 class="about-heading">💫 تجربه‌ی کاربری</h2>
+        <ul class="about-list">
+          <li>
+            <strong>Skeleton Loader:</strong> کارت‌های خاکستری shimmer قبل از
+            لود محصولات
+          </li>
+          <li>
+            <strong>Infinite Scroll:</strong> بارگذاری خودکار ۸ محصول بعدی با
+            اسکرول
+          </li>
+          <li>
+            <strong>انیمیشن پرواز به سبد:</strong> حرکت عکس محصول به سمت آیکون
+            سبد با Bezier
+          </li>
+          <li>
+            <strong>Toast Notification:</strong> پیام‌های بازخورد در گوشه‌ی صفحه
+          </li>
+          <li>
+            <strong>انیمیشن موفقیت:</strong> تیک سبز کشیده‌شده بعد از پرداخت
+          </li>
+          <li>
+            <strong>حالت خالی:</strong> انیمیشن SVG سبد خرید خالی با جرقه‌های
+            چشمک‌زن
+          </li>
+          <li>
+            <strong>انیمیشن تغییر تعداد:</strong> پالس روی عدد سبد هنگام + یا –
+          </li>
+          <li>
+            <strong>صفحه‌ی لاگین/ثبت‌نام مدرن:</strong> دو ستونه با بخش تصویری
+            گرادیانت
+          </li>
+          <li>
+            <strong>صفحه‌ی پرداخت:</strong> کارت درگاه با اسپینر و حالت
+            موفق/ناموفق
+          </li>
+          <li>
+            <strong>Accessibility:</strong> aria-label، prefers-reduced-motion،
+            keyboard navigation
+          </li>
+        </ul>
+      </section>
+
+      <!-- ⬇️ تکنولوژی‌ها -->
+      <section class="about-section">
+        <h2 class="about-heading">🛠 تکنولوژی‌های استفاده‌شده</h2>
+
+        <div class="tech-groups">
+          <div class="tech-group">
+            <h3 class="tech-group-title">Frontend</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript (ES Modules)</span>
+              <span class="tech-tag">Tailwind CSS 3</span>
+              <span class="tech-tag">Vazirmatn Font</span>
+              <span class="tech-tag">Leaflet (نقشه)</span>
+            </div>
+          </div>
+
+          <div class="tech-group">
+            <h3 class="tech-group-title">Backend</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">CORS</span>
+              <span class="tech-tag">dotenv (.env)</span>
+              <span class="tech-tag">JSON Storage</span>
+            </div>
+          </div>
+
+          <div class="tech-group">
+            <h3 class="tech-group-title">ابزارها</h3>
+            <div class="tech-tags">
+              <span class="tech-tag">npm</span>
+              <span class="tech-tag">lite-server</span>
+              <span class="tech-tag">concurrently</span>
+              <span class="tech-tag">Tailwind CLI</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⬇️ معماری -->
+      <section class="about-section">
+        <h2 class="about-heading">🏗 معماری پروژه</h2>
+        <p class="about-text">
+          پروژه به‌صورت <strong>ماژولار</strong> طراحی شده — هر فایل JavaScript
+          یک مسئولیت مشخص دارد. این کار باعث خوانایی بهتر، نگهداری آسان‌تر و
+          امکان تست جداگانه‌ی هر بخش می‌شود.
+        </p>
+
+        <div class="architecture-box">
+          <div class="arch-row">
+            <span class="arch-label">API Layer</span>
+            <span class="arch-desc">
+              تمام ارتباط با بک‌اند در فایل <code>api.js</code> متمرکز شده — ۱۴
+              endpoint
+            </span>
+          </div>
+          <div class="arch-row">
+            <span class="arch-label">State</span>
+            <span class="arch-desc">
+              سبد خرید، recently و تم در <code>localStorage</code>؛ سفارشات در
+              بک‌اند
+            </span>
+          </div>
+          <div class="arch-row">
+            <span class="arch-label">Components</span>
+            <span class="arch-desc">
+              هدر، فوتر، سبد خرید و Breadcrumb ماژولار روی همه‌ی صفحه‌ها تزریق
+              می‌شوند
+            </span>
+          </div>
+          <div class="arch-row">
+            <span class="arch-label">Style</span>
+            <span class="arch-desc">
+              CSS در ۴ فایل جدا (base, layout, components, utilities) + Tailwind
+              محلی
+            </span>
+          </div>
+          <div class="arch-row">
+            <span class="arch-label">Cart</span>
+            <span class="arch-desc">
+              هر محصول با <code>cartId</code> یکتا (ترکیب id + size) — پشتیبانی
+              از چند سایز
+            </span>
+          </div>
+          <div class="arch-row">
+            <span class="arch-label">Config</span>
+            <span class="arch-desc">
+              تنظیمات پرداخت از <code>.env</code> خوانده می‌شود (mode, delay,
+              messages)
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⬇️ API Endpoints -->
+      <section class="about-section">
+        <h2 class="about-heading">🔌 API Endpoints</h2>
+        <div class="api-table-wrap">
+          <table class="api-table">
+            <thead>
+              <tr>
+                <th>متد</th>
+                <th>مسیر</th>
+                <th>توضیح</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/api/products</code></td>
+                <td>لیست محصولات با فیلتر، جستجو، صفحه‌بندی</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/api/products/:id</code></td>
+                <td>جزئیات یک محصول</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/api/deals</code></td>
+                <td>پیشنهادات ویژه (تخفیف بالای ۵۰٪)</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/api/login</code></td>
+                <td>ورود کاربر</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/api/register</code></td>
+                <td>ثبت‌نام کاربر جدید</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/api/favorites</code></td>
+                <td>لیست علاقه‌مندی‌ها</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/api/favorites</code></td>
+                <td>افزودن به علاقه‌مندی‌ها</td>
+              </tr>
+              <tr>
+                <td><code>DELETE</code></td>
+                <td><code>/api/favorites/:id</code></td>
+                <td>حذف از علاقه‌مندی‌ها</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/api/coupons/validate</code></td>
+                <td>اعتبارسنجی کد تخفیف</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/api/orders</code></td>
+                <td>لیست سفارش‌ها</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/api/orders/:id</code></td>
+                <td>جزئیات یک سفارش</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/api/orders</code></td>
+                <td>ساخت سفارش جدید</td>
+              </tr>
+              <tr>
+                <td><code>POST</code></td>
+                <td><code>/api/payment</code></td>
+                <td>پرداخت سفارش (تنظیمات از <code>.env</code>)</td>
+              </tr>
+              <tr>
+                <td><code>GET</code></td>
+                <td><code>/api/config/payment</code></td>
+                <td>خواندن تنظیمات پرداخت (اختیاری)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ⬇️ نکات ارائه -->
+      <section class="about-section about-presentation">
+        <h2 class="about-heading">🎤 نکات کلیدی برای ارائه</h2>
+        <p class="about-text about-text-small">
+          این بخش مخصوص خودت است — توی صفحه می‌توانی نگهش داری یا حذفش کنی.
+        </p>
+
+        <div class="presentation-grid">
+          <div class="presentation-card">
+            <div class="presentation-num">۱</div>
+            <h3 class="presentation-title">معماری ماژولار</h3>
+            <p class="presentation-text">
+              هر فایل JS یک مسئولیت دارد (<code>api.js</code>,
+              <code>cart.js</code>, <code>ui.js</code>). کد قابل نگهداری و تست
+              است.
+            </p>
+          </div>
+
+          <div class="presentation-card">
+            <div class="presentation-num">۲</div>
+            <h3 class="presentation-title">بدون فریمورک</h3>
+            <p class="presentation-text">
+              همه‌چیز با Vanilla JS و ES Modules — بدون React یا Vue. درک
+              عمیق‌تر از JavaScript.
+            </p>
+          </div>
+
+          <div class="presentation-card">
+            <div class="presentation-num">۳</div>
+            <h3 class="presentation-title">REST API واقعی</h3>
+            <p class="presentation-text">
+              بک‌اند Express با ۱۴ endpoint، پشتیبانی از query params و مدیریت
+              خطا.
+            </p>
+          </div>
+
+          <div class="presentation-card">
+            <div class="presentation-num">۴</div>
+            <h3 class="presentation-title">UX حرفه‌ای</h3>
+            <p class="presentation-text">
+              Skeleton loading، انیمیشن پرواز، تیک موفقیت، سبد خالی متحرک،
+              صفحه‌ی لاگین/پرداخت مدرن.
+            </p>
+          </div>
+
+          <div class="presentation-card">
+            <div class="presentation-num">۵</div>
+            <h3 class="presentation-title">CSS ماژولار</h3>
+            <p class="presentation-text">
+              ۴ فایل جدا برای مسئولیت‌های مختلف + CSS Variables برای تم.
+              Tailwind محلی، نه CDN.
+            </p>
+          </div>
+
+          <div class="presentation-card">
+            <div class="presentation-num">۶</div>
+            <h3 class="presentation-title">امنیت و اعتبارسنجی</h3>
+            <p class="presentation-text">
+              اعتبارسنجی سمت سرور، چک دسترسی به سفارش (فقط صاحب سفارش) و جلوگیری
+              از XSS.
+            </p>
+          </div>
+
+          <div class="presentation-card">
+            <div class="presentation-num">۷</div>
+            <h3 class="presentation-title">پشتیبانی از سایز</h3>
+            <p class="presentation-text">
+              <code>cartId</code> یکتا (id + size) — کاربر می‌تواند یک محصول را
+              با دو سایز مختلف داشته باشد.
+            </p>
+          </div>
+
+          <div class="presentation-card">
+            <div class="presentation-num">۸</div>
+            <h3 class="presentation-title">تنظیمات از .env</h3>
+            <p class="presentation-text">
+              <code>PAYMENT_MODE</code>، <code>PAYMENT_DELAY</code> و پیام‌ها از
+              <code>.env</code> خوانده می‌شوند — بدون تغییر کد.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ⬇️ محدودیت‌ها -->
+      <section class="about-section">
+        <h2 class="about-heading">⚠️ محدودیت‌های پروژه</h2>
+        <ul class="about-list about-list-warn">
+          <li>
+            داده‌ها در فایل‌های JSON ذخیره می‌شوند، نه دیتابیس واقعی
+            (MongoDB/PostgreSQL)
+          </li>
+          <li>رمز عبور plain text — برای پروداکشن نیاز به bcrypt دارد</li>
+          <li>توکن احراز هویت دمو است، JWT واقعی پیاده نشده</li>
+          <li>درگاه پرداخت شبیه‌سازی‌شده — پول واقعی جابه‌جا نمی‌شود</li>
+          <li>
+            فرم تماس با ما فقط شبیه‌سازی شده — ارسال واقعی ایمیل انجام نمی‌شود
+          </li>
+          <li>بدون تست خودکار (unit test / integration test)</li>
+        </ul>
+        <p class="about-text about-text-small">
+          <strong>نکته برای ارائه:</strong> اگر استاد پرسید «چرا JWT نه؟» بگو
+          «به‌دلیل محدودیت زمان پروژه، احراز هویت ساده پیاده شد ولی ساختار کد
+          آماده‌ی ارتقا به JWT است.»
+        </p>
+      </section>
+
+      <!-- ⬇️ جمع‌بندی -->
+      <section class="about-section about-summary">
+        <h2 class="about-heading">🎓 جمع‌بندی</h2>
+        <p class="about-text">
+          این پروژه نشان می‌دهد که می‌شود یک فروشگاه اینترنتی کامل را
+          <strong>بدون فریمورک سنگین</strong> و با تمرکز روی اصول پایه
+          (ماژولاریتی، UX، ریسپانسیو، معماری API، مدیریت state) پیاده‌سازی کرد.
+          هدف اصلی، یادگیری عمیق مفاهیم پایه بود — نه استفاده از ابزارهای آماده.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script type="module">
+      import "./js/main.js";
+      import { renderFooter } from "./js/footer.js";
+      import { renderSimpleBreadcrumb } from "./js/breadcrumb.js";
+
+      renderFooter();
+      renderSimpleBreadcrumb("درباره ما");
+    </script>
+  </body>
+</html>

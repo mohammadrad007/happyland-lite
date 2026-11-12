@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ثبت‌نام | Happy Land Lite</title>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("hl_theme");
+          const systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const theme = saved || (systemDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+
+    <main class="auth-page">
+      <div class="auth-container">
+        <!-- ستون فرم (راست) -->
+        <div class="auth-form-side">
+          <div class="auth-form-inner">
+            <a href="index.html" class="auth-logo-mobile">🎈 Happy Land</a>
+
+            <h1 class="auth-title">ایجاد حساب کاربری</h1>
+            <p class="auth-subtitle">
+              ثبت‌نام کن و از خریدهای ویژه بهره‌مند شو
+            </p>
+
+            <form class="auth-form-modern" id="registerForm">
+              <div id="error" class="auth-error"></div>
+
+              <div class="auth-field">
+                <label for="name">نام و نام خانوادگی</label>
+                <div class="auth-input-wrap">
+                  <svg
+                    class="auth-input-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    placeholder="مثلاً علی رضایی"
+                  />
+                </div>
+              </div>
+
+              <div class="auth-field">
+                <label for="email">ایمیل</label>
+                <div class="auth-input-wrap">
+                  <svg
+                    class="auth-input-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <input
+                    type="email"
+                    id="email"
+                    required
+                    placeholder="example@email.com"
+                    dir="ltr"
+                  />
+                </div>
+              </div>
+
+              <div class="auth-field">
+                <label for="password">رمز عبور</label>
+                <div class="auth-input-wrap">
+                  <svg
+                    class="auth-input-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="11"
+                      width="18"
+                      height="11"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <input
+                    type="password"
+                    id="password"
+                    minlength="6"
+                    required
+                    placeholder="حداقل ۶ کاراکتر"
+                    dir="ltr"
+                  />
+                  <button
+                    type="button"
+                    class="auth-eye"
+                    data-toggle="password"
+                    aria-label="نمایش رمز"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                      ></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </button>
+                </div>
+                <div class="auth-password-strength" id="strengthBar"></div>
+              </div>
+
+              <div class="auth-field">
+                <label for="password2">تکرار رمز عبور</label>
+                <div class="auth-input-wrap">
+                  <svg
+                    class="auth-input-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="11"
+                      width="18"
+                      height="11"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <input
+                    type="password"
+                    id="password2"
+                    minlength="6"
+                    required
+                    placeholder="تکرار رمز"
+                    dir="ltr"
+                  />
+                  <button
+                    type="button"
+                    class="auth-eye"
+                    data-toggle="password2"
+                    aria-label="نمایش رمز"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                      ></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <label class="auth-checkbox auth-checkbox-terms">
+                <input type="checkbox" id="terms" required />
+                <span>
+                  <a href="#" class="auth-link">قوانین و مقررات</a> را می‌پذیرم
+                </span>
+              </label>
+
+              <button
+                type="submit"
+                class="btn-brand auth-submit"
+                id="submitBtn"
+              >
+                ثبت‌نام
+              </button>
+            </form>
+
+            <p class="auth-switch">
+              قبلاً ثبت‌نام کرده‌ای؟
+              <a href="login.html" class="auth-link-bold">وارد شو</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- ستون تصویری (چپ) -->
+        <div class="auth-visual-side">
+          <div class="auth-visual-content">
+            <a href="index.html" class="auth-visual-logo">🎈 Happy Land</a>
+
+            <div class="auth-visual-main">
+              <div class="auth-visual-emoji">🎉</div>
+              <h2 class="auth-visual-title">به خانواده‌ی Happy Land بپیوند</h2>
+              <p class="auth-visual-text">
+                با ثبت‌نام در Happy Land Lite از تخفیف‌های ویژه، پیگیری آسان
+                سفارش‌ها و پیشنهادات اختصاصی بهره‌مند شو.
+              </p>
+
+              <div class="auth-visual-features">
+                <div class="auth-visual-feature">
+                  <span class="auth-visual-feature-icon">✓</span>
+                  <span>تخفیف‌های اختصاصی برای اعضا</span>
+                </div>
+                <div class="auth-visual-feature">
+                  <span class="auth-visual-feature-icon">✓</span>
+                  <span>ذخیره‌ی علاقه‌مندی‌ها و سبد خرید</span>
+                </div>
+                <div class="auth-visual-feature">
+                  <span class="auth-visual-feature-icon">✓</span>
+                  <span>پیگیری آسان سفارش‌ها</span>
+                </div>
+                <div class="auth-visual-feature">
+                  <span class="auth-visual-feature-icon">✓</span>
+                  <span>اطلاع از جدیدترین محصولات</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="auth-visual-footer">
+              © 2024 Happy Land Lite — پروژه‌ی دانشگاهی
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module">
+      import { register } from "./js/api.js";
+
+      const form = document.getElementById("registerForm");
+      const errorEl = document.getElementById("error");
+      const submitBtn = document.getElementById("submitBtn");
+      const passwordInput = document.getElementById("password");
+      const password2Input = document.getElementById("password2");
+      const strengthBar = document.getElementById("strengthBar");
+
+      // ⬇️ redirect اگه از قبل لاگین بود
+      const existingUser = localStorage.getItem("hl_user");
+      if (existingUser) {
+        window.location.href = "dashboard.html";
+      }
+
+      // ⬇️ toggle نمایش رمز برای همه‌ی دکمه‌های چشم
+      document.querySelectorAll(".auth-eye").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetId = btn.dataset.toggle;
+          const input = document.getElementById(targetId);
+          if (!input) return;
+
+          const isPassword = input.type === "password";
+          input.type = isPassword ? "text" : "password";
+          btn.style.color = isPassword ? "var(--brand)" : "";
+        });
+      });
+
+      // ⬇️ نشانگر قدرت رمز
+      passwordInput.addEventListener("input", () => {
+        const val = passwordInput.value;
+        let strength = 0;
+        if (val.length >= 6) strength++;
+        if (val.length >= 10) strength++;
+        if (/[A-Z]/.test(val) || /[a-z]/.test(val)) strength++;
+        if (/\d/.test(val)) strength++;
+        if (/[^A-Za-z0-9]/.test(val)) strength++;
+
+        const colors = [
+          "",
+          "#d63031",
+          "#e67e22",
+          "#f1c40f",
+          "#27ae60",
+          "#27ae60",
+        ];
+        const labels = ["", "ضعیف", "متوسط", "خوب", "قوی", "بسیار قوی"];
+
+        if (val.length === 0) {
+          strengthBar.className = "auth-password-strength";
+          strengthBar.textContent = "";
+          return;
+        }
+
+        strengthBar.className = `auth-password-strength level-${strength}`;
+        strengthBar.textContent = labels[strength];
+        strengthBar.style.setProperty("--strength-color", colors[strength]);
+      });
+
+      // ⬇️ اعتبارسنجی و ارسال
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        errorEl.textContent = "";
+        errorEl.classList.remove("show");
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = passwordInput.value;
+        const password2 = password2Input.value;
+        const terms = document.getElementById("terms").checked;
+
+        if (password !== password2) {
+          errorEl.textContent = "رمز عبور و تکرار آن یکسان نیستند";
+          errorEl.classList.add("show");
+          return;
+        }
+
+        if (!terms) {
+          errorEl.textContent = "لطفاً قوانین و مقررات را بپذیرید";
+          errorEl.classList.add("show");
+          return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "در حال ثبت‌نام...";
+
+        try {
+          const data = await register(name, email, password);
+          localStorage.setItem("hl_user", JSON.stringify(data.user));
+          localStorage.setItem("hl_token", data.token);
+          window.location.href = "dashboard.html";
+        } catch (err) {
+          errorEl.textContent = err.message;
+          errorEl.classList.add("show");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "ثبت‌نام";
+        }
+      });
+    </script>
+  </body>
+</html>

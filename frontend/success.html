@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>پرداخت موفق | Happy Land Lite</title>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("hl_theme");
+          const systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const theme = saved || (systemDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+
+    <main class="max-w-2xl mx-auto px-5 py-10">
+      <div id="successContent" class="success-wrapper">
+        <!-- انیمیشن و محتوا با JS پر می‌شه -->
+        <p class="text-center text-muted py-10">در حال بارگذاری...</p>
+      </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script type="module">
+      import "./js/main.js";
+      import "./js/success.js";
+      import { renderFooter } from "./js/footer.js";
+      renderFooter();
+    </script>
+  </body>
+</html>

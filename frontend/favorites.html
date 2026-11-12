@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>علاقه‌مندی‌ها | Happy Land Lite</title>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("hl_theme");
+          const systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const theme = saved || (systemDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+    <div class="max-w-6xl mx-auto px-5">
+      <nav id="breadcrumb" aria-label="مسیر صفحه"></nav>
+    </div>
+    <main class="max-w-6xl mx-auto px-5 my-8">
+      <div class="favorites-header">
+        <div>
+          <h1 class="text-2xl font-bold mb-1">علاقه‌مندی‌های من</h1>
+          <p id="favCount" class="text-muted text-sm"></p>
+        </div>
+        <button id="addAllBtn" class="btn-brand hidden">
+          🛒 افزودن همه به سبد
+        </button>
+      </div>
+      <div id="emptyState" class="hidden text-center py-16">
+        <p class="text-muted mb-4">
+          هنوز محصولی به علاقه‌مندی‌ها اضافه نکرده‌اید.
+        </p>
+        <a href="products.html" class="btn-brand">مشاهده محصولات</a>
+      </div>
+      <div class="product-grid" id="favGrid"></div>
+    </main>
+
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+      <h3 class="font-bold text-lg mb-4">سبد خرید</h3>
+      <div id="cartItems" class="flex-1 overflow-y-auto"></div>
+      <div id="cartTotal" class="py-4 font-bold border-t border-base">
+        جمع: 0 تومان
+      </div>
+      <a href="checkout.html" class="btn-brand w-full">ادامه خرید</a>
+    </aside>
+
+    <footer class="site-footer"></footer>
+
+    <script type="module">
+      import "./js/main.js";
+      import { renderFooter } from "./js/footer.js";
+      renderFooter();
+    </script>
+
+    <script type="module">
+      import "./js/main.js";
+      import "./js/favorites.js";
+    </script>
+  </body>
+</html>

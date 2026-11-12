@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>داشبورد | Happy Land Lite</title>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("hl_theme");
+          const systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const theme = saved || (systemDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div
+        class="max-w-6xl mx-auto flex items-center justify-between px-5 py-4"
+      >
+        <a href="index.html" class="text-2xl font-extrabold text-brand"
+          >🎈 Happy Land</a
+        >
+        <div class="flex items-center gap-3">
+          <span id="userName" class="text-sm text-muted"></span>
+          <button id="logoutBtn" class="btn-outline">خروج</button>
+        </div>
+      </div>
+    </header>
+    <div class="max-w-6xl mx-auto px-5">
+      <nav id="breadcrumb" aria-label="مسیر صفحه"></nav>
+    </div>
+    <main class="max-w-6xl mx-auto px-5 my-10">
+      <h1 class="text-2xl font-bold mb-6">داشبورد سفارش‌ها</h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div class="bg-surface p-5 rounded-xl border border-base">
+          <div class="text-muted text-sm">تعداد سفارش‌ها</div>
+          <div class="text-2xl font-extrabold text-brand" id="statOrders">
+            -
+          </div>
+        </div>
+        <div class="bg-surface p-5 rounded-xl border border-base">
+          <div class="text-muted text-sm">پرداخت‌شده</div>
+          <div class="text-2xl font-extrabold text-brand" id="statPaid">-</div>
+        </div>
+        <div class="bg-surface p-5 rounded-xl border border-base">
+          <div class="text-muted text-sm">در انتظار پرداخت</div>
+          <div class="text-2xl font-extrabold text-brand" id="statPending">
+            -
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-surface rounded-xl border border-base overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-surface-2 text-right">
+            <tr>
+              <th class="p-3">کد سفارش</th>
+              <th class="p-3">تاریخ</th>
+              <th class="p-3">تعداد اقلام</th>
+              <th class="p-3">مبلغ</th>
+              <th class="p-3">وضعیت</th>
+            </tr>
+          </thead>
+          <tbody id="ordersBody"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <script type="module" src="js/dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+[
+  {
+    "code": "HAPPY20",
+    "type": "percent",
+    "value": 20,
+    "minTotal": 500000,
+    "maxDiscount": 500000,
+    "description": "۲۰٪ تخفیف (حداکثر ۵۰۰ هزار تومان) — حداقل خرید ۵۰۰ هزار"
+  },
+  {
+    "code": "WELCOME10",
+    "type": "percent",
+    "value": 10,
+    "minTotal": 0,
+    "maxDiscount": 200000,
+    "description": "۱۰٪ تخفیف خوش‌آمدگویی (حداکثر ۲۰۰ هزار تومان)"
+  },
+  {
+    "code": "SAVE100K",
+    "type": "fixed",
+    "value": 100000,
+    "minTotal": 800000,
+    "description": "۱۰۰ هزار تومان تخفیف نقدی — حداقل خرید ۸۰۰ هزار"
+  },
+  {
+    "code": "FREESHIP",
+    "type": "fixed",
+    "value": 50000,
+    "minTotal": 0,
+    "description": "۵۰ هزار تومان تخفیف (به‌جای ارسال رایگان)"
+  }
+]

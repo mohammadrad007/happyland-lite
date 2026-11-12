@@ -1,0 +1,74 @@
+/* ============================================ */
+/* ===== کلاس‌های کمکی ========================= */
+/* ============================================ */
+
+/* رنگ‌های برند */
+.text-brand {
+  color: var(--brand);
+}
+.bg-brand {
+  background: var(--brand);
+}
+.bg-brand-light {
+  background: var(--brand-light);
+}
+.border-brand {
+  border-color: var(--brand);
+}
+
+/* رنگ‌های سطح و متن */
+.text-muted {
+  color: var(--text-muted);
+}
+.bg-surface {
+  background: var(--surface);
+}
+.bg-surface-2 {
+  background: var(--surface-2);
+}
+.border-base {
+  border-color: var(--border);
+}
+
+/* دکمه‌ی برند */
+.btn-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  background: var(--brand);
+  color: #fff;
+  transition: background 0.2s;
+}
+.btn-brand:hover {
+  background: var(--brand-dark);
+}
+.btn-brand:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* دکمه‌ی outline */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+.btn-outline:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}

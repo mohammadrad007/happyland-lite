@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ورود | Happy Land Lite</title>
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("hl_theme");
+          const systemDark = window.matchMedia(
+            "(prefers-color-scheme: dark)",
+          ).matches;
+          const theme = saved || (systemDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+  </head>
+  <body>
+    <header class="site-header"></header>
+
+    <main class="auth-page">
+      <div class="auth-container">
+        <!-- ستون فرم (راست) -->
+        <div class="auth-form-side">
+          <div class="auth-form-inner">
+            <a href="index.html" class="auth-logo-mobile">🎈 Happy Land</a>
+
+            <h1 class="auth-title">خوش برگشتی 👋</h1>
+            <p class="auth-subtitle">برای ادامه وارد حساب کاربری‌ات شو</p>
+
+            <form class="auth-form-modern" id="loginForm">
+              <div id="error" class="auth-error"></div>
+
+              <div class="auth-field">
+                <label for="email">ایمیل</label>
+                <div class="auth-input-wrap">
+                  <svg
+                    class="auth-input-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path
+                      d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    ></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <input
+                    type="email"
+                    id="email"
+                    value="demo@demo.com"
+                    required
+                    placeholder="example@email.com"
+                    dir="ltr"
+                  />
+                </div>
+              </div>
+
+              <div class="auth-field">
+                <label for="password">رمز عبور</label>
+                <div class="auth-input-wrap">
+                  <svg
+                    class="auth-input-icon"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <rect
+                      x="3"
+                      y="11"
+                      width="18"
+                      height="11"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                  </svg>
+                  <input
+                    type="password"
+                    id="password"
+                    value="123456"
+                    required
+                    placeholder="••••••"
+                    dir="ltr"
+                  />
+                  <button
+                    type="button"
+                    class="auth-eye"
+                    id="togglePassword"
+                    aria-label="نمایش رمز"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"
+                      ></path>
+                      <circle cx="12" cy="12" r="3"></circle>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="auth-row">
+                <label class="auth-checkbox">
+                  <input type="checkbox" id="remember" />
+                  <span>مرا به خاطر بسپار</span>
+                </label>
+                <a href="#" class="auth-link">فراموشی رمز؟</a>
+              </div>
+
+              <button
+                type="submit"
+                class="btn-brand auth-submit"
+                id="submitBtn"
+              >
+                ورود به حساب
+              </button>
+            </form>
+
+            <div class="auth-divider">
+              <span>یا</span>
+            </div>
+
+            <div class="auth-demo-box">
+              <div class="auth-demo-title">🔑 ورود سریع با حساب دمو</div>
+              <button
+                type="button"
+                class="btn-outline auth-demo-btn"
+                id="demoLogin"
+              >
+                demo@demo.com ورود با
+              </button>
+            </div>
+
+            <p class="auth-switch">
+              حساب نداری؟
+              <a href="register.html" class="auth-link-bold">ثبت‌نام کن</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- ستون تصویری (چپ) -->
+        <div class="auth-visual-side">
+          <div class="auth-visual-content">
+            <a href="index.html" class="auth-visual-logo">🎈 Happy Land</a>
+
+            <div class="auth-visual-main">
+              <div class="auth-visual-emoji">🛍</div>
+              <h2 class="auth-visual-title">خرید آسان، استایل دلخواه</h2>
+              <p class="auth-visual-text">
+                هزاران محصول متنوع برای زن، مرد و کودک — با ارسال سریع و ضمانت
+                بازگشت.
+              </p>
+
+              <div class="auth-visual-features">
+                <div class="auth-visual-feature">
+                  <span class="auth-visual-feature-icon">✓</span>
+                  <span>ارسال رایگان بالای ۵۰۰ هزار تومان</span>
+                </div>
+                <div class="auth-visual-feature">
+                  <span class="auth-visual-feature-icon">✓</span>
+                  <span>۷ روز ضمانت بازگشت کالا</span>
+                </div>
+                <div class="auth-visual-feature">
+                  <span class="auth-visual-feature-icon">✓</span>
+                  <span>پرداخت امن آنلاین</span>
+                </div>
+                <div class="auth-visual-feature">
+                  <span class="auth-visual-feature-icon">✓</span>
+                  <span>پشتیبانی ۷ روز هفته</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="auth-visual-footer">
+              © 2024 Happy Land Lite — پروژه‌ی دانشگاهی
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module">
+      import { login } from "./js/api.js";
+
+      const form = document.getElementById("loginForm");
+      const errorEl = document.getElementById("error");
+      const submitBtn = document.getElementById("submitBtn");
+      const toggleBtn = document.getElementById("togglePassword");
+      const passwordInput = document.getElementById("password");
+      const demoBtn = document.getElementById("demoLogin");
+
+      // ⬇️ redirect اگه از قبل لاگین بود
+      const existingUser = localStorage.getItem("hl_user");
+      if (existingUser) {
+        window.location.href = "dashboard.html";
+      }
+
+      // ⬇️ نمایش/مخفی کردن رمز
+      toggleBtn.addEventListener("click", () => {
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        toggleBtn.style.color = isPassword ? "var(--brand)" : "";
+      });
+
+      // ⬇️ ورود
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        errorEl.textContent = "";
+        errorEl.classList.remove("show");
+
+        const email = document.getElementById("email").value.trim();
+        const password = passwordInput.value;
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = "در حال ورود...";
+
+        try {
+          const data = await login(email, password);
+          localStorage.setItem("hl_user", JSON.stringify(data.user));
+          localStorage.setItem("hl_token", data.token);
+          window.location.href = "dashboard.html";
+        } catch (err) {
+          errorEl.textContent = err.message;
+          errorEl.classList.add("show");
+          submitBtn.disabled = false;
+          submitBtn.textContent = "ورود به حساب";
+        }
+      });
+
+      // ⬇️ ورود سریع دمو
+      demoBtn.addEventListener("click", async () => {
+        document.getElementById("email").value = "demo@demo.com";
+        passwordInput.value = "123456";
+        form.requestSubmit();
+      });
+    </script>
+  </body>
+</html>
