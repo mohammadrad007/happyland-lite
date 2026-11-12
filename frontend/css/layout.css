@@ -13,6 +13,7 @@
   top: 0;
   z-index: 100;
   flex-shrink: 0;
+  min-height: 73.39px;
   transition:
     background 0.25s,
     border-color 0.25s;
@@ -124,6 +125,7 @@ main {
   color: var(--text);
   font-size: 14px;
   flex-shrink: 0;
+  min-height: 414.22px;
   transition:
     background 0.25s,
     border-color 0.25s,
