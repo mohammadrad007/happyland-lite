@@ -310,6 +310,22 @@ app.post("/api/coupons/validate", (req, res) => {
   });
 });
 
+// ============================================
+// ===== سرو کردن فرانت‌اند در پروداکشن ======
+// ============================================
+
+if (process.env.NODE_ENV === "production") {
+  const frontendPath = path.join(__dirname, "..", "frontend");
+
+  // فایل‌های استاتیک (HTML, CSS, JS, assets)
+  app.use(express.static(frontendPath));
+
+  // برای هر مسیر ناشناخته (که با /api شروع نشه) → index.html
+  app.get(/^\/(?!api).*/, (req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"));
+  });
+}
+
 app.listen(PORT, () => {
   console.log(`✅ Backend: http://localhost:${PORT}`);
 });
