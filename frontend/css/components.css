@@ -2753,6 +2753,7 @@ a.contact-info-card:hover {
   /* Deals */
   .deals-section {
     grid-template-columns: 1fr;
+    overflow: hidden;
   }
   .deals-banner {
     min-height: auto;
@@ -3797,4 +3798,10 @@ a.contact-info-card:hover {
     font-size: 14px;
     padding: 13px 16px;
   }
+}
+
+.deals-slider-wrap,
+.recently-section {
+  overflow: hidden;
+  max-width: 100%;
 }
