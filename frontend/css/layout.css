@@ -502,8 +502,8 @@ main {
   }
   .avatar-menu {
     min-width: 200px;
-    left: auto;
-    right: 0;
+    left: 0;
+    right: auto;
   }
   .avatar-user-name {
     font-size: 13px;

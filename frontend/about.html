@@ -48,6 +48,7 @@
           <span class="about-tag">🔧 Node.js + Express</span>
           <span class="about-tag">🌗 دارک/لایت</span>
           <span class="about-tag">🔐 پرداخت شبیه‌سازی</span>
+          <span class="about-tag">📱 ریسپانسیو</span>
         </div>
       </section>
 
@@ -145,7 +146,7 @@
             <h3 class="feature-title">پرداخت هوشمند</h3>
             <p class="feature-text">
               درگاه شبیه‌سازی با تنظیمات از <code>.env</code> (always-success /
-              random / manual).
+              always-fail / random / manual).
             </p>
           </div>
 
@@ -234,8 +235,12 @@
             گرادیانت
           </li>
           <li>
-            <strong>صفحه‌ی پرداخت:</strong> کارت درگاه با اسپینر و حالت
+            <strong>صفحه‌ی پرداخت مدرن:</strong> کارت درگاه با اسپینر و حالت
             موفق/ناموفق
+          </li>
+          <li>
+            <strong>آواتار تعاملی:</strong> منوی کشویی روی موبایل کامل داخل صفحه
+            می‌مونه
           </li>
           <li>
             <strong>Accessibility:</strong> aria-label، prefers-reduced-motion،
@@ -279,6 +284,7 @@
               <span class="tech-tag">lite-server</span>
               <span class="tech-tag">concurrently</span>
               <span class="tech-tag">Tailwind CLI</span>
+              <span class="tech-tag">Render (دیپلوی)</span>
             </div>
           </div>
         </div>
@@ -334,6 +340,13 @@
             <span class="arch-desc">
               تنظیمات پرداخت از <code>.env</code> خوانده می‌شود (mode, delay,
               messages)
+            </span>
+          </div>
+          <div class="arch-row">
+            <span class="arch-label">Deploy</span>
+            <span class="arch-desc">
+              فرانت و بک روی <strong>Render</strong> — تشخیص خودکار محیط
+              (لوکال/سرور) با <code>hostname</code>
             </span>
           </div>
         </div>
@@ -430,17 +443,15 @@
       <!-- ⬇️ نکات ارائه -->
       <section class="about-section about-presentation">
         <h2 class="about-heading">🎤 نکات کلیدی برای ارائه</h2>
-        <p class="about-text about-text-small">
-          این بخش مخصوص خودت است — توی صفحه می‌توانی نگهش داری یا حذفش کنی.
-        </p>
+        <p class="about-text about-text-small">شامل چندین نکته مهم:</p>
 
         <div class="presentation-grid">
           <div class="presentation-card">
             <div class="presentation-num">۱</div>
             <h3 class="presentation-title">معماری ماژولار</h3>
             <p class="presentation-text">
-              هر فایل JS یک مسئولیت دارد (<code>api.js</code>,
-              <code>cart.js</code>, <code>ui.js</code>). کد قابل نگهداری و تست
+              هر فایل JS یک مسئولیت دارد (<code>api.js</code>،
+              <code>cart.js</code>، <code>ui.js</code>). کد قابل نگهداری و تست
               است.
             </p>
           </div>
@@ -507,6 +518,15 @@
               <code>.env</code> خوانده می‌شوند — بدون تغییر کد.
             </p>
           </div>
+
+          <div class="presentation-card">
+            <div class="presentation-num">۹</div>
+            <h3 class="presentation-title">دیپلوی روی Render</h3>
+            <p class="presentation-text">
+              فرانت و بک روی یک دامنه — تشخیص خودکار محیط با
+              <code>hostname</code>، بدون تغییر کد بین لوکال و سرور.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -527,9 +547,9 @@
           <li>بدون تست خودکار (unit test / integration test)</li>
         </ul>
         <p class="about-text about-text-small">
-          <strong>نکته برای ارائه:</strong> اگر استاد پرسید «چرا JWT نه؟» بگو
-          «به‌دلیل محدودیت زمان پروژه، احراز هویت ساده پیاده شد ولی ساختار کد
-          آماده‌ی ارتقا به JWT است.»
+          <strong>نکته برای ارائه:</strong> «چرا JWT نه؟» «به‌دلیل محدودیت زمان
+          پروژه، احراز هویت ساده پیاده شد ولی ساختار کد آماده‌ی ارتقا به JWT
+          است.»
         </p>
       </section>
 
